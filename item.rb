@@ -14,7 +14,7 @@ class Item
 
   def add_genre(genre)
     @genre = genre
-    genre.items << self 
+    genre.items << self
   end
 
   def add_source(source)

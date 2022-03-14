@@ -17,18 +17,18 @@ describe 'Book' do
     end
 
     it 'should return true if published_date is older than 10 years' do
-    @book = Book.new('John', 'bad', 20)
+      @book = Book.new('John', 'bad', 20)
       expect(@book.can_be_archived?).to eq true
     end
 
     it 'should return true if cover_state equals to "bad"' do
       @book = Book.new('John', 'bad', 9)
-        expect(@book.can_be_archived?).to eq true
+      expect(@book.can_be_archived?).to eq true
     end
 
     it 'should return false if cover_state equals to "bad"' do
       @book = Book.new('John', 'good', 9)
-        expect(@book.can_be_archived?).to eq false
+      expect(@book.can_be_archived?).to eq false
     end
   end
 end
