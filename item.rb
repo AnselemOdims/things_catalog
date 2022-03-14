@@ -1,17 +1,33 @@
 # class Item
 class Item
-  def initialize(genre, author, source, label, publish_date)
+  def initialize(publish_date)
     @id = rand(1..1000)
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
     @publish_date = publish_date
     @archived = false
   end
 
   def move_to_archive
     can_be_archived? && @archived = true
+  end
+
+  def add_genre(genre)
+    @genre = genre
+    genre.items << self 
+  end
+
+  def add_source(source)
+    @source = source
+    source.items << self
+  end
+
+  def add_author(author)
+    @author = author
+    author.items << self
+  end
+
+  def add_label(label)
+    @label = label
+    label.items << self
   end
 
   private
