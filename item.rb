@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# class Item
 class Item
   def initialize(genre, author, source, label, publish_date)
     @id = rand(1..1000)
@@ -14,7 +17,8 @@ class Item
   end
 
   private
+
   def can_be_archived?
-    @publish_date > 10 
+    @publish_date > 10
   end
 end
