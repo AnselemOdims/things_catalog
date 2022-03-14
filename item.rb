@@ -10,7 +10,7 @@ class Item
   end
 
   def move_to_archive
-    can_be_archived? ? @archived = true : @archived = false
+    can_be_archived? && @archived = true
   end
 
   private
