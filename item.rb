@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # class Item
 class Item
   def initialize(genre, author, source, label, publish_date)
