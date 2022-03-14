@@ -1,8 +1,10 @@
+require 'date'
+
 # class Item
 class Item
   def initialize(publish_date)
     @id = rand(1..1000)
-    @publish_date = publish_date
+    @publish_date = Date.parse(publish_date)
     @archived = false
   end
 
@@ -33,6 +35,6 @@ class Item
   private
 
   def can_be_archived?
-    @publish_date > 10
+    Time.now.year - @publish_date.year > 10
   end
 end
