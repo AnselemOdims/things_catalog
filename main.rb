@@ -1,11 +1,14 @@
+require 'colorize'
+
 def welcome
   puts '------------------------------
   *** Welcome to the thingsCatalog App ***
-   -------------------------------------'
+   -------------------------------------'.colorize(:yellow)
 end
 
 def list_of_options
-  puts ['1: List all books 📖',
+  puts ['Please choose an option by entering a number: ',
+        '1: List all books 📖',
         '2: List all music albums 🎶',
         '3: List all games 🎯',
         '4: List all genres 🔠 (e.g \'Comedy\', \'Thriller\')',
@@ -41,3 +44,6 @@ def options_choice(num)
 end
 
 def main; end
+
+welcome
+list_of_options
