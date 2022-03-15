@@ -13,4 +13,6 @@ CREATE TABLE MusicAlbum (
 CREATE TABLE Genre(
     id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
     name VARCHAR(100)
+    item_id SERIAL NOT NULL,
+    CONSTRAINT item_fk FOREIGN KEY (item_id) REFERENCES items(id)
 ); 
