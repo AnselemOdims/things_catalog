@@ -2,6 +2,8 @@ require 'date'
 
 # class Item
 class Item
+  attr_accessor :genre, :author, :label, :publish_date
+
   def initialize(publish_date)
     @id = rand(1..1000)
     @publish_date = Date.parse(publish_date)
@@ -15,11 +17,6 @@ class Item
   def add_genre(genre)
     @genre = genre
     genre.items << self
-  end
-
-  def add_source(source)
-    @source = source
-    source.items << self
   end
 
   def add_author(author)
