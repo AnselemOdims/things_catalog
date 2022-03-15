@@ -1,1 +1,1 @@
-[{"publisher":"John Doe","cover_state":"good","publish_date":"2002-03-03"},{"publisher":"Ahmed Reda","cover_state":"bad","publish_date":"2001-02-03"},{"publisher":"Kevin Koome","cover_state":"good","publish_date":"2019-02-05"},{"publisher":"Anita Vams","cover_state":"bad","publish_date":"1990-05-05"},{"publisher":"John","cover_state":"good","publish_date":"2022-02-05"}]
+[{"id":90,"publisher":"John","cover_state":"good","publish_date":"2022-02-02"}]

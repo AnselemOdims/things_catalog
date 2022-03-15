@@ -1,7 +1,7 @@
 require 'json'
 
 class List
-  def self.list_books
+  def list_books
     books = JSON.parse(File.read('books.json'))
     if books.empty?
       "No books added yet"
