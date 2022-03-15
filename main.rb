@@ -22,35 +22,43 @@ def list_of_options
         '10: Exit and save 👋']
 end
 
+def exit
+  puts 'Thank you for using our App. Bye for now 👋'.colorize(:red)
+end
+
 def options_choice(num)
   include HandleBooks
   include List
   case num
-  when '1'
+  when 1
     list_books
-  when '2'
+  when 2
     puts 'Method to list all music albums'
-  when '3'
+  when 3
     puts 'Method to list all games'
-  when '4'
+  when 4
     puts 'Method to list all genres'
-  when '5'
+  when 5
     list_labels
-  when '6'
+  when 6
     puts 'Method to list all author'
-  when '7'
+  when 7
     add_book
-  when '8'
+  when 8
     puts 'Method to add a music album'
-  when '9'
+  when 9
     puts 'Method to add a game'
   end
 end
 
 def main
-list_of_options
-num = gets.chomp
-options_choice(num)
+  list_of_options
+  num = gets.chomp.to_i
+  if num < 10
+    options_choice(num)
+  else
+    exit
+  end
 end
 
 welcome
