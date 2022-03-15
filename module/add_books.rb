@@ -37,7 +37,9 @@ module HandleBooks
   def add_to_json(book)
     File.write('books.json', '[]') unless File.exist? 'books.json'
     books = JSON.parse(File.read('books.json'))
-    books << { 'id' => book.id, 'publisher' => book.publisher, 'cover_state' => book.cover_state, 'publish_date' => book.publish_date,  'label' => { 'title' => book.label.title, 'color' => book.label.color}}
+    books << { 'id' => book.id, 'publisher' => book.publisher, 'cover_state' => book.cover_state,
+               'publish_date' => book.publish_date,
+               'label' => { 'title' => book.label.title, 'color' => book.label.color } }
     File.write('books.json', JSON.generate(books))
   end
 

@@ -8,7 +8,8 @@ module List
       'No books added yet'
     else
       books.each_with_index do |book, index|
-        puts "#{index + 1}) ID:#{book['id']}, Publisher: #{book['publisher']}, Cover State: #{book['cover_state']}, Published Date: #{book['publish_date']}".colorize(:yellow)
+        puts "#{index + 1}) ID:#{book['id']}, Publisher: #{book['publisher']},
+                    Cover State: #{book['cover_state']}, Published Date: #{book['publish_date']}".colorize(:yellow)
       end
     end
   end
@@ -19,7 +20,7 @@ module List
       'No labels added yet'
     else
       books.each_with_index do |book, index|
-        puts "#{index+1}) Title: #{book['label']['title']}, Color: #{book['label']['color']}"
+        puts "#{index + 1}) Title: #{book['label']['title']}, Color: #{book['label']['color']}"
       end
     end
   end
