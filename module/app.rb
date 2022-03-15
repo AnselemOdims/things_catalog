@@ -24,7 +24,6 @@ module App
     puts 'Thank you for using our App. Bye for now 👋'.colorize(:red)
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def options_choice(num)
     case num
     when 1
@@ -45,7 +44,9 @@ module App
       puts 'Method to add a music album'
     when 9
       puts 'Method to add a game'
+    else
+      puts ['Please select an option between 1 and 10. ❌',
+            '-----------------------------------------']
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 end
