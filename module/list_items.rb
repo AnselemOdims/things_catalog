@@ -17,6 +17,7 @@ module List
   end
 
   def list_labels
+    File.write('books.json', '[]') unless File.exist? 'books.json'
     books = JSON.parse(File.read('books.json'))
     if books.empty?
       'No labels added yet'
