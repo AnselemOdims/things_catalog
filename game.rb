@@ -6,5 +6,4 @@ class Game < Item
     @multiplayer = multiplayer
     @last_played = last_played
   end
-  
 end
