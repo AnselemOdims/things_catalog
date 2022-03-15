@@ -3,7 +3,7 @@ require 'colorize'
 def welcome
   puts '------------------------------
   *** Welcome to the thingsCatalog App ***
-   -------------------------------------'.colorize(:yellow)
+   -------------------------------------'.colorize(:blue)
 end
 
 def list_of_options

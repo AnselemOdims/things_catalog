@@ -1,1 +1,16 @@
-[{"id":90,"publisher":"John","cover_state":"good","publish_date":"2022-02-02"}]
+[
+	{
+		"id": 794,
+		"publisher": "john",
+		"cover_state": "good",
+		"publish_date": "2001-02-03",
+		"label": { "title": "John is fine", "color": "red" }
+	},
+	{
+		"id": 271,
+		"publisher": "Kevi",
+		"cover_state": "bad",
+		"publish_date": "2002-02-03",
+		"label": { "title": "Ahmed is bad", "color": "red" }
+	}
+]

@@ -2,20 +2,7 @@ require 'json'
 require_relative './books'
 require_relative './label'
 
-class Add
-  def add_book
-    publisher, cover_state, publish_date = create_book
-    book = Book.new(publisher, cover_state, publish_date)
-    include_label(book)
-    File.write('books.json', '[]') unless File.exist? 'books.json'
-    books = JSON.parse(File.read('books.json'))
-    books << { 'id' => book.id, 'publisher' => book.publisher, 'cover_state' => book.cover_state, 'publish_date' => book.publish_date }
-    File.write('books.json', JSON.generate(books))
-    puts 'Book created successfully'
-  end
-
-  private 
-
+class HandleBooks
   def include_label(book)
     puts 'Title: '
     title = gets.chomp
@@ -46,7 +33,23 @@ class Add
     publish_date = gets.chomp
     [publisher, cover_state, publish_date]
   end
+
+  def add_to_json(book)
+    File.write('books.json', '[]') unless File.exist? 'books.json'
+    books = JSON.parse(File.read('books.json'))
+    books << { 'id' => book.id, 'publisher' => book.publisher, 'cover_state' => book.cover_state, 'publish_date' => book.publish_date,  'label' => { 'title' => book.label.title, 'color' => book.label.color}}
+    File.write('books.json', JSON.generate(books))
+  end
+
+  def add_book
+    publisher, cover_state, publish_date = create_book
+    book = Book.new(publisher, cover_state, publish_date)
+    include_label(book)
+    add_to_json(book)
+    puts 'Book created successfully'
+  end
 end
 
-book = Add.new
-book.add_book
+handle = HandleBooks.new
+
+handle.add_book
