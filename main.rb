@@ -1,5 +1,12 @@
 require_relative './module/app'
 # rubocop:disable Style/MixinUsage
+
+def welcome
+  puts '------------------------------
+*** Welcome to the thingsCatalog App ***
+ -------------------------------------'.colorize(:yellow)
+end
+
 def main
   include App
   list_of_options

@@ -1,15 +1,10 @@
 require 'colorize'
-require_relative './module/add_books'
-require_relative './module/list_items'
+require_relative './add_books'
+require_relative './list_items'
 
 module App
   include HandleBooks
   include List
-  def welcome
-    puts '------------------------------
-  *** Welcome to the thingsCatalog App ***
-   -------------------------------------'.colorize(:yellow)
-  end
 
   def list_of_options
     puts ['Please choose an option by entering a number: '.colorize(:green),
