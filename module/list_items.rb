@@ -1,6 +1,6 @@
 require 'json'
 require 'colorize'
-require_relative './app.rb'
+require_relative './app'
 
 module List
   def list_books
