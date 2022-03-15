@@ -1,13 +1,15 @@
 require 'colorize'
+require_relative './module/add_books'
+require_relative './module/list_items'
 
 def welcome
   puts '------------------------------
   *** Welcome to the thingsCatalog App ***
-   -------------------------------------'.colorize(:blue)
+   -------------------------------------'.colorize(:yellow)
 end
 
 def list_of_options
-  puts ['Please choose an option by entering a number: ',
+  puts ['Please choose an option by entering a number: '.colorize(:green),
         '1: List all books 📖',
         '2: List all music albums 🎶',
         '3: List all games 🎯',
@@ -21,9 +23,11 @@ def list_of_options
 end
 
 def options_choice(num)
+  include HandleBooks
+  include List
   case num
   when '1'
-    puts 'Method to list a book'
+    list_books
   when '2'
     puts 'Method to list all music albums'
   when '3'
@@ -31,11 +35,11 @@ def options_choice(num)
   when '4'
     puts 'Method to list all genres'
   when '5'
-    puts 'Method to list all labels'
+    list_labels
   when '6'
     puts 'Method to list all author'
   when '7'
-    puts 'Method to add a book'
+    add_book
   when '8'
     puts 'Method to add a music album'
   when '9'
@@ -43,7 +47,11 @@ def options_choice(num)
   end
 end
 
-def main; end
+def main
+list_of_options
+num = gets.chomp
+options_choice(num)
+end
 
 welcome
-list_of_options
+main

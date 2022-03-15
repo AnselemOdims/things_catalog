@@ -1,8 +1,8 @@
 require 'json'
-require_relative './books'
-require_relative './label'
+require_relative '../books'
+require_relative '../label'
 
-class HandleBooks
+module HandleBooks
   def include_label(book)
     puts 'Title: '
     title = gets.chomp
@@ -49,7 +49,3 @@ class HandleBooks
     puts 'Book created successfully'
   end
 end
-
-handle = HandleBooks.new
-
-handle.add_book

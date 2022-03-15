@@ -1,16 +1,1 @@
-[
-	{
-		"id": 794,
-		"publisher": "john",
-		"cover_state": "good",
-		"publish_date": "2001-02-03",
-		"label": { "title": "John is fine", "color": "red" }
-	},
-	{
-		"id": 271,
-		"publisher": "Kevi",
-		"cover_state": "bad",
-		"publish_date": "2002-02-03",
-		"label": { "title": "Ahmed is bad", "color": "red" }
-	}
-]
+[{"id":470,"publisher":"Ahmed","cover_state":"good","publish_date":"2019-02-02","label":{"title":"John is fine","color":"Green"}},{"id":663,"publisher":"Kevin","cover_state":"good","publish_date":"2016-04-04","label":{"title":"Something somehing","color":"blue"}},{"id":946,"publisher":"Ahmed Reda","cover_state":"good","publish_date":"2020-02-08","label":{"title":"I live in Cairo","color":"Blue"}}]
