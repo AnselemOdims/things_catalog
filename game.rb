@@ -6,4 +6,8 @@ class Game < Item
     @multiplayer = multiplayer
     @last_played = last_played
   end
+
+  def can_be_archived?
+    super && @last_played > 2
+  end
 end
