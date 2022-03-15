@@ -1,11 +1,13 @@
 require 'json'
 require 'colorize'
+require_relative './app.rb'
 
 module List
   def list_books
+    File.write('books.json', '[]') unless File.exist? 'books.json'
     books = JSON.parse(File.read('books.json'))
     if books.empty?
-      'No books added yet'
+      puts 'No books added yet, please add books'
     else
       books.each_with_index do |book, index|
         puts "#{index + 1}) ID:#{book['id']}, Publisher: #{book['publisher']},
