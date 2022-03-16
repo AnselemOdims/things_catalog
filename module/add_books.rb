@@ -38,7 +38,7 @@ module HandleBooks
       rescue ArgumentError
         false
       end
-      date = '' unless valid
+      publish_date = '' unless valid
       puts 'Kindly insert a valid date using this format YYYY/MM/DD' unless valid
     end
     publish_date

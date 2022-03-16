@@ -55,7 +55,8 @@ module List
     else
       puts '-----------------------------------------'
       games.each_with_index do |game, index|
-        puts "#{index + 1}) First name: #{game['author']['first_name']}, Last name: #{game['author']['last_name']}".colorize(:yellow)
+        puts "#{index + 1}) First name: #{game['author']['first_name']}, Last name: #{game['author']['last_name']}"
+          .colorize(:yellow)
       end
       puts '-----------------------------------------'
     end
@@ -84,7 +85,7 @@ module List
     else
       puts '-----------------------------------------'
       albums.each_with_index do |album, index|
-        puts "#{index + 1}) Genre name: #{album['genre']}"
+        puts "#{index + 1}) Genre name: #{album['genre']}".colorize(:yellow)
       end
       puts '-----------------------------------------'
     end

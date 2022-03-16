@@ -20,7 +20,7 @@ module HandleMusicAlbum
     [publish_date, spotify]
   end
 
-  def convert_to_json(album)
+  def convert_to_js(album)
     File.write('album.json', '[]') unless File.exist?('album.json')
     albums = JSON.parse(File.read('album.json'))
     albums << { 'id' => album.id,
@@ -39,7 +39,7 @@ module HandleMusicAlbum
     publish_date, on_spotify = music_album_data
     music_album = MusicAlbum.new(publish_date, on_spotify)
     include_genre(music_album)
-    convert_to_json(music_album)
+    convert_to_js(music_album)
     puts 'Music Album created successfully'
   end
 end

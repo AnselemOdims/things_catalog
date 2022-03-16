@@ -11,10 +11,8 @@ def main
   loop do
     list_of_options
     num = gets.chomp.to_i
-    if num == 10
-      exit
-      break
-    end
+    return exit if num == 10
+
     options_choice(num)
   end
 end
