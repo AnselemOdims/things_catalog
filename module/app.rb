@@ -45,7 +45,7 @@ module App
     when 7
       add_book
     when 8
-      puts 'Method to add a album'
+      add_album
     when 9
       add_game
     else
