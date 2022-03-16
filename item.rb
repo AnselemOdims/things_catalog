@@ -1,6 +1,5 @@
 require 'date'
 
-# class Item
 class Item
   attr_reader :id, :genre, :author, :label
 
