@@ -1,3 +1,4 @@
+-- create tables that mimick classes
 CREATE TABLE items(
     id SERIAL PRIMARY KEY,
     archived BOOLEAN DEFAULT 'f',
@@ -63,6 +64,7 @@ CREATE TABLE label (
     items TEXT []
 );
 
+-- Add indexes for foreign keys
 CREATE INDEX label_id_asc ON book(label_id ASC);
 
 CREATE INDEX genre_id_asc ON musicalbum(genre_id ASC);
