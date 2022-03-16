@@ -1,9 +1,11 @@
 require 'colorize'
 require_relative './add_books'
+require_relative './add_games'
 require_relative './list_items'
 
 module App
   include HandleBooks
+  include HandleGames
   include List
 
   def list_of_options
@@ -24,7 +26,6 @@ module App
     puts 'Thank you for using our App. Bye for now 👋'.colorize(:red)
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def options_choice(num)
     case num
     when 1
@@ -32,20 +33,22 @@ module App
     when 2
       puts 'Method to list all music albums'
     when 3
-      puts 'Method to list all games'
+      list_games
     when 4
       puts 'Method to list all genres'
     when 5
       list_labels
     when 6
-      puts 'Method to list all author'
+      list_authors
     when 7
       add_book
     when 8
       puts 'Method to add a music album'
     when 9
-      puts 'Method to add a game'
+      add_game
+    else
+      puts ['Please select an option between 1 and 10. ❌',
+            '-----------------------------------------']
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 end
