@@ -1,5 +1,5 @@
 require 'date'
-require_relative '../books'
+require_relative '../classes/books'
 
 describe 'Book' do
   before :each do

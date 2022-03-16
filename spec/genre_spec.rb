@@ -1,5 +1,5 @@
-require_relative '../genre'
-require_relative '../item'
+require_relative '../classes/genre'
+require_relative '../classes/item'
 
 describe Genre do
   before :all do

@@ -1,7 +1,7 @@
-require_relative '../item'
-require_relative '../genre'
-require_relative '../author'
-require_relative '../label'
+require_relative '../classes/item'
+require_relative '../classes/genre'
+require_relative '../classes/author'
+require_relative '../classes/label'
 
 describe 'Item' do
   before :each do
