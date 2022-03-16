@@ -1,9 +1,10 @@
 require 'json'
-require_relative '../books'
-require_relative '../label'
+require_relative '../classes/books'
+require_relative '../classes/label'
 
 module HandleBooks
   def include_label(book)
+    puts 'Let\'s add a title and color for this book'
     puts 'Title: '
     title = gets.chomp
     puts 'Color: '
@@ -16,7 +17,7 @@ module HandleBooks
     valid = false
     cover_state = ''
     until valid
-      print 'Cover state[good/bad]: '
+      print 'What is the state of the book cover[good/bad]: '
       cover_state = gets.chomp
       valid = %w[good bad].include?(cover_state)
       cover_state = '' unless valid
@@ -25,12 +26,29 @@ module HandleBooks
     cover_state
   end
 
+  def include_date
+    valid = false
+    publish_date = ''
+    until valid
+      puts 'What date was the book published: '
+      publish_date = gets.chomp
+      valid = begin
+        Date.parse(publish_date)
+        true
+      rescue ArgumentError
+        false
+      end
+      publish_date = '' unless valid
+      puts 'Kindly insert a valid date using this format YYYY/MM/DD' unless valid
+    end
+    publish_date
+  end
+
   def create_book
-    puts 'Publisher\'s name: '
+    puts 'What is the publisher\'s name: '
     publisher = gets.chomp
     cover_state = include_cover
-    puts 'Publish Date: '
-    publish_date = gets.chomp
+    publish_date = include_date
     [publisher, cover_state, publish_date]
   end
 

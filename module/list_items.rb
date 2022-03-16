@@ -7,7 +7,7 @@ module List
     File.write('books.json', '[]') unless File.exist? 'books.json'
     books = JSON.parse(File.read('books.json'))
     if books.empty?
-      puts 'No books added yet, please add books'
+      puts '----No books added yet, please add books----'.colorize(:red)
     else
       puts '-----------------------------------------'
       books.each_with_index do |book, index|
@@ -22,11 +22,11 @@ module List
     File.write('books.json', '[]') unless File.exist? 'books.json'
     books = JSON.parse(File.read('books.json'))
     if books.empty?
-      'No labels added yet'
+      puts '----No labels added yet----'.colorize(:red)
     else
       puts '-----------------------------------------'
       books.each_with_index do |book, index|
-        puts "#{index + 1}) Title: #{book['label']['title']}, Color: #{book['label']['color']}"
+        puts "#{index + 1}) Title: #{book['label']['title']}, Color: #{book['label']['color']}".colorize(:yellow)
       end
       puts '-----------------------------------------'
     end
@@ -36,7 +36,7 @@ module List
     File.write('games.json', '[]') unless File.exist? 'games.json'
     games = JSON.parse(File.read('games.json'))
     if games.empty?
-      puts 'No games added yet, please add games'
+      puts '----No games added yet, please add games----'.colorize(:red)
     else
       puts '-----------------------------------------'
       games.each_with_index do |game, index|
@@ -51,11 +51,12 @@ module List
     File.write('games.json', '[]') unless File.exist? 'games.json'
     games = JSON.parse(File.read('games.json'))
     if games.empty?
-      'No authors added yet'
+      puts '----No authors added yet----'.colorize(:red)
     else
       puts '-----------------------------------------'
       games.each_with_index do |game, index|
         puts "#{index + 1}) First name: #{game['author']['first_name']}, Last name: #{game['author']['last_name']}"
+          .colorize(:yellow)
       end
       puts '-----------------------------------------'
     end
@@ -65,12 +66,14 @@ module List
     File.write('album.json', '[]') unless File.exist? 'album.json'
     albums = JSON.parse(File.read('album.json'))
     if albums.empty?
-      puts 'No albums added yet, please add albums'
+      puts '----No albums added yet, please add albums----'.colorize(:red)
     else
+      puts '-----------------------------------------'
       albums.each_with_index do |album, index|
         puts "#{index + 1}) ID:#{album['id']}, publish date: #{album['publish_date']},
         on spotify: #{album['on_spotify']}, genre: #{album['genre']}".colorize(:yellow)
       end
+      puts '-----------------------------------------'
     end
   end
 
@@ -78,11 +81,13 @@ module List
     File.write('album.json', '[]') unless File.exist? 'album.json'
     albums = JSON.parse(File.read('album.json'))
     if albums.empty?
-      'No genres added yet'
+      puts '----No genres added yet----'.colorize(:red)
     else
+      puts '-----------------------------------------'
       albums.each_with_index do |album, index|
-        puts "#{index + 1}) Genre name: #{album['genre']}"
+        puts "#{index + 1}) Genre name: #{album['genre']}".colorize(:yellow)
       end
+      puts '-----------------------------------------'
     end
   end
 end

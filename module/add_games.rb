@@ -1,6 +1,6 @@
 require 'json'
-require_relative '../game'
-require_relative '../author'
+require_relative '../classes/game'
+require_relative '../classes/author'
 
 module HandleGames
   def create_author(game)
