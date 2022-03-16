@@ -31,4 +31,33 @@ module List
       puts '-----------------------------------------'
     end
   end
+
+  def list_games
+    File.write('games.json', '[]') unless File.exist? 'games.json'
+    games = JSON.parse(File.read('games.json'))
+    if games.empty?
+      puts 'No games added yet, please add games'
+    else
+      puts '-----------------------------------------'
+      games.each_with_index do |game, index|
+        puts "#{index + 1}) ID:#{game['id']}, multiplayer: #{game['multiplayer']},
+                    last played: #{game['last_played']}, Published Date: #{game['publish_date']}".colorize(:yellow)
+      end
+      puts '-----------------------------------------'
+    end
+  end
+
+  def list_authors
+    File.write('games.json', '[]') unless File.exist? 'games.json'
+    games = JSON.parse(File.read('games.json'))
+    if games.empty?
+      'No authors added yet'
+    else
+      puts '-----------------------------------------'
+      games.each_with_index do |game, index|
+        puts "#{index + 1}) First name: #{game['author']['first_name']}, Last name: #{game['author']['last_name']}"
+      end
+      puts '-----------------------------------------'
+    end
+  end
 end
