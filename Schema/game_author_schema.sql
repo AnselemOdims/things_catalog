@@ -19,7 +19,8 @@ CREATE TABLE author(
 
 CREATE TABLE genre(
     id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(100) item_id SERIAL NOT NULL,
+    name VARCHAR(100),
+    item_id SERIAL NOT NULL,
     CONSTRAINT item_fk FOREIGN KEY (item_id) REFERENCES items(id)
 );
 
@@ -27,8 +28,12 @@ CREATE TABLE game(
     id SERIAL PRIMARY KEY,
     multiplayer VARCHAR(50),
     last_played TIMESTAMP NOT NULL,
+    archived BOOLEAN DEFAULT 'f',
+    publish_date TIMESTAMP NOT NULL,
     item_id SERIAL NOT NULL,
-    CONSTRAINT item_fk FOREIGN KEY (item_id) REFERENCES items(id)
+    author_id SERIAL NOT NULL,
+    CONSTRAINT item_fk FOREIGN KEY (item_id) REFERENCES items(id),
+    CONSTRAINT author_fk FOREIGN KEY (author_id) REFERENCES author(id)
 );
 
 CREATE TABLE musicalbum (
@@ -38,7 +43,7 @@ CREATE TABLE musicalbum (
     archived BOOLEAN,
     on_spotify BOOLEAN DEFAULT 'f',
     genre_id INT,
-    FOREIGN KEY (label_id) REFERENCES Label(id)
+    CONSTRAINT genre_fk FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
 
 CREATE TABLE book (
@@ -48,7 +53,7 @@ CREATE TABLE book (
     publish_date DATE,
     archived BOOLEAN,
     label_id SERIAL NOT NULL,
-    FOREIGN KEY (label_id) REFERENCES Label(id)
+    CONSTRAINT label_fk FOREIGN KEY (label_id) REFERENCES Label(id)
 );
 
 CREATE TABLE label (
@@ -59,4 +64,15 @@ CREATE TABLE label (
 );
 
 CREATE INDEX label_id_asc ON book(label_id ASC);
+
 CREATE INDEX genre_id_asc ON musicalbum(genre_id ASC);
+
+Create INDEX author_id_asc ON game(author_id ASC);
+
+Create INDEX item_id_asc ON game(item_id ASC);
+
+Create INDEX genre_id_asc ON items(genre_id ASC);
+
+Create INDEX author_id_asc ON items(author_id ASC);
+
+Create INDEX label_id_asc ON items(label_id ASC);
