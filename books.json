@@ -1,0 +1,9 @@
+[
+	{
+		"id": 438,
+		"publisher": "John Doe",
+		"cover_state": "good",
+		"publish_date": "2002-02-02",
+		"label": { "title": "John is fine", "color": "red" }
+	}
+]
