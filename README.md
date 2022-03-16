@@ -7,6 +7,11 @@
 - Ruby
 - git
 
+## Video Presentation
+[Link to video presentation](https://drive.google.com/file/d/1cb2bMdnESwQb-yHaERsOa2aqfj7RLZVE/view)
+
+## Screenshot
+![](./catalog.png)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
