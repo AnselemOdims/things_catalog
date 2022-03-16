@@ -2,8 +2,12 @@ CREATE TABLE items(
     id SERIAL PRIMARY KEY,
     archived BOOL DEFAULT 'f',
     author_id SERIAL NOT NULL,
+    label_id SERIAL NOT NULL,
+    genre_id SERIAL NOT NULL,
     publish_date TIMESTAMP NOT NULL,
-    CONSTRAINT author_fk FOREIGN KEY (author_id) REFERENCES Author(id),
+    CONSTRAINT author_fk FOREIGN KEY (author_id) REFERENCES author(id),
+    CONSTRAINT label_fk FOREIGN KEY (label_id) REFERENCES label(id),
+    CONSTRAINT genre_fk FOREIGN KEY (genre_id) REFERENCES genre(id),
 );
 
 CREATE TABLE author(
@@ -14,11 +18,10 @@ CREATE TABLE author(
 );
 
 CREATE TABLE genre(
-    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
-    name VARCHAR(100)
-    item_id SERIAL NOT NULL,
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) item_id SERIAL NOT NULL,
     CONSTRAINT item_fk FOREIGN KEY (item_id) REFERENCES items(id)
-); 
+);
 
 CREATE TABLE game(
     id SERIAL PRIMARY KEY,
@@ -33,9 +36,7 @@ CREATE TABLE musicalbum (
     name VARCHAR(100),
     publish_date DATE,
     archived BOOLEAN,
-    on_spotify VARCHAR(2)
-    genre_id INT,
+    on_spotify VARCHAR(2) genre_id INT,
     label_id INT,
-    FOREIGN KEY (genre_id) REFERENCES Genre(id)  
-    FOREIGN KEY (label_id) REFERENCES Label(id)
+    FOREIGN KEY (genre_id) REFERENCES Genre(id) FOREIGN KEY (label_id) REFERENCES Label(id)
 );
