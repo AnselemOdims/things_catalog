@@ -1,6 +1,6 @@
 CREATE TABLE items(
     id SERIAL PRIMARY KEY,
-    archived BOOL DEFAULT 'f',
+    archived BOOLEAN DEFAULT 'f',
     author_id SERIAL NOT NULL,
     label_id SERIAL NOT NULL,
     genre_id SERIAL NOT NULL,
