@@ -1,3 +1,4 @@
+require 'date'
 require_relative '../books'
 
 describe 'Book' do
@@ -8,6 +9,18 @@ describe 'Book' do
   context 'when the book is created' do
     it 'should create a new Book' do
       expect(@book).to be_instance_of Book
+    end
+
+    it 'should be able to read the publisher' do
+      expect(@book.publisher).to eq 'John'
+    end
+
+    it 'should be able to read the cover_state' do
+      expect(@book.cover_state).to eq 'good'
+    end
+
+    it 'should be able to read the publish_date' do
+      expect(@book.publish_date).to eq Date.parse('2001/02/03')
     end
   end
 
