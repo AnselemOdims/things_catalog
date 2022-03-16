@@ -1,7 +1,7 @@
 require_relative 'item'
 
 class Author
-  attr_reader :items
+  attr_reader :items, :first_name, :last_name
 
   def initialize(first_name, last_name)
     @id = rand(1..1000)
