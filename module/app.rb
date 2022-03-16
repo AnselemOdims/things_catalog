@@ -2,11 +2,13 @@ require 'colorize'
 require_relative './add_books'
 require_relative './add_games'
 require_relative './list_items'
+require_relative './add_music_album'
 
 module App
   include HandleBooks
   include HandleGames
   include List
+  include HandleMusicAlbum
 
   def list_of_options
     puts ['Please choose an option by entering a number: '.colorize(:green),
@@ -31,11 +33,11 @@ module App
     when 1
       list_books
     when 2
-      puts 'Method to list all music albums'
+      list_albums
     when 3
       list_games
     when 4
-      puts 'Method to list all genres'
+      list_genres
     when 5
       list_labels
     when 6
@@ -43,7 +45,7 @@ module App
     when 7
       add_book
     when 8
-      puts 'Method to add a music album'
+      puts 'Method to add a album'
     when 9
       add_game
     else
