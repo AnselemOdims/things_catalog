@@ -1,7 +1,6 @@
 # things_catalog
 
-
-> 
+> Things Catalog is a command line App that lets you add an item which can be a book, game, or music album. 
 
 ## Built With
 
@@ -22,12 +21,14 @@ cd things_catalog
 ruby main.rb
 ```
 
+- To run test 
+  `rspec spec`
+
 ### Prerequisites
 
 -Ruby
 
-Rspec gem for testing inviroment
-
+Rspec gem for testing enviroment
 
 ## Authors
 
@@ -38,6 +39,18 @@ Rspec gem for testing inviroment
 - LinkedIn: [Ahmed-Reda](https://www.linkedin.com/in/armali/)
 - Email: ahmedreda152@gmail.com
 
+👤 **ANSELEM ODIMEGWU**
+
+- GitHub: [@AnselemOdims](https://github.com/AnselemOdims)
+- LinkedIn: [Anselem Odimegwu](https://www.linkedin.com/in/anselem-odimegwu/)
+- Email: anselemcloud@gmail.com
+
+👤 **KEVIN KOOME**
+
+- GitHub: [@koomekevo](https://github.com/koomekevo)
+- Twitter: [@koomekevo](https://twitter.com/koomekevo)
+- LinkedIn: [LinkedIn](https://ke.linkedin.com/in/kevin-koome-aab84186) 
+- Email: koomekevo@gmail.com
 
 ## 🤝 Contributing
 
