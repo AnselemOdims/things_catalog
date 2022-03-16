@@ -1,6 +1,6 @@
 require 'json'
-require_relative '../music_album'
-require_relative '../genre'
+require_relative '../classes/music_album'
+require_relative '../classes/genre'
 
 module HandleMusicAlbum
   def music_album_data

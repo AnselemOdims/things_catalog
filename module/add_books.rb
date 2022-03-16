@@ -1,6 +1,6 @@
 require 'json'
-require_relative '../books'
-require_relative '../label'
+require_relative '../classes/books'
+require_relative '../classes/label'
 
 module HandleBooks
   def include_label(book)
