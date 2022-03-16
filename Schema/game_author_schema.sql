@@ -1,6 +1,6 @@
 CREATE TABLE items(
     id SERIAL PRIMARY KEY,
-    archived BOOL DEFAULT 'f',
+    archived BOOLEAN DEFAULT 'f',
     author_id SERIAL NOT NULL,
     publish_date TIMESTAMP NOT NULL,
     CONSTRAINT author_fk FOREIGN KEY (author_id) REFERENCES Author(id),
@@ -33,9 +33,19 @@ CREATE TABLE musicalbum (
     name VARCHAR(100),
     publish_date DATE,
     archived BOOLEAN,
-    on_spotify VARCHAR(2)
+    on_spotify BOOLEAN DEFAULT 'f',
     genre_id INT,
     label_id INT,
     FOREIGN KEY (genre_id) REFERENCES Genre(id)  
+    FOREIGN KEY (label_id) REFERENCES Label(id)
+);
+
+CREATE TABLE book (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    publisher VARCHAR(100),
+    cover_state VARCHAR(4),
+    publish_date DATE,
+    archived BOOLEAN,
+    label_id SERIAL NOT NULL,
     FOREIGN KEY (label_id) REFERENCES Label(id)
 );
