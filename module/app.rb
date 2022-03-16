@@ -5,6 +5,7 @@ require_relative './list_items'
 module App
   include HandleBooks
   include List
+  include HandleMusicAlbum
 
   def list_of_options
     puts ['Please choose an option by entering a number: '.colorize(:green),
@@ -30,11 +31,11 @@ module App
     when 1
       list_books
     when 2
-      puts 'Method to list all music albums'
+      list_music_album
     when 3
       puts 'Method to list all games'
     when 4
-      puts 'Method to list all genres'
+      list_genres
     when 5
       list_labels
     when 6
@@ -42,7 +43,7 @@ module App
     when 7
       add_book
     when 8
-      puts 'Method to add a music album'
+      add_music_album
     when 9
       puts 'Method to add a game'
     end
