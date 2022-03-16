@@ -13,10 +13,29 @@ CREATE TABLE author(
     items TEXT []
 );
 
+CREATE TABLE genre(
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
+    name VARCHAR(100)
+    item_id SERIAL NOT NULL,
+    CONSTRAINT item_fk FOREIGN KEY (item_id) REFERENCES items(id)
+); 
+
 CREATE TABLE game(
     id SERIAL PRIMARY KEY,
     multiplayer VARCHAR(50),
     last_played TIMESTAMP NOT NULL,
     item_id SERIAL NOT NULL,
     CONSTRAINT item_fk FOREIGN KEY (item_id) REFERENCES items(id)
+);
+
+CREATE TABLE musicalbum (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100),
+    publish_date DATE,
+    archived BOOLEAN,
+    on_spotify VARCHAR(2)
+    genre_id INT,
+    label_id INT,
+    FOREIGN KEY (genre_id) REFERENCES Genre(id)  
+    FOREIGN KEY (label_id) REFERENCES Label(id)
 );
