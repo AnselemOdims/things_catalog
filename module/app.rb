@@ -1,6 +1,7 @@
 require 'colorize'
 require_relative './add_books'
 require_relative './list_items'
+require_relative './add_music_album'
 
 module App
   include HandleBooks
@@ -31,7 +32,7 @@ module App
     when 1
       list_books
     when 2
-      list_music_album
+      list_albums
     when 3
       puts 'Method to list all games'
     when 4
@@ -43,7 +44,7 @@ module App
     when 7
       add_book
     when 8
-      add_music_album
+      puts 'Method to add a album'
     when 9
       puts 'Method to add a game'
     end
