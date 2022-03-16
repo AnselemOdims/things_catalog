@@ -2,7 +2,7 @@ require_relative '../label'
 require_relative '../item'
 
 describe 'Label' do
-  before :each do 
+  before :each do
     @label = Label.new('Angels & Demons', 'Red')
   end
 

@@ -35,6 +35,9 @@ describe 'Item' do
       expect(@item.label).to eq @label
       expect(@label.items).to eq [@item]
     end
-  end
 
+    it 'should throw error when trying to access a private method' do
+      expect { @item.can_be_archived? }.to raise_exception(NoMethodError)
+    end
+  end
 end
