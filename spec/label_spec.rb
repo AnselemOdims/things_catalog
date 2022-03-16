@@ -1,4 +1,5 @@
 require_relative '../label'
+require_relative '../item'
 
 describe 'Label' do
   before :each do 
@@ -22,6 +23,14 @@ describe 'Label' do
 
     it 'should be able to read the items value' do
       expect(@label.items).to eq []
+    end
+  end
+
+  context 'when item is added to the item array' do
+    it 'should be able to access the item added' do
+      @item = Item.new('2001/02/03')
+      @label.add_item(@item)
+      expect(@label.items).to eq [@item]
     end
   end
 end
